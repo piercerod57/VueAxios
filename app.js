@@ -40,8 +40,20 @@ window.onload = function()
 			})()
 		},
 		VueDelFunction: function() {
+		  let self = this;
+		  var number = Math.floor(Math.random() * 100);
 		  
-		  console.log('del');
+		  ;(async () => {
+			  var response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + number)
+			  .then(function (response) {
+				console.log(response);
+				self.del = response;
+			  })
+			  .catch(function (error) {
+				console.log(error);
+				self.del = error;
+			  });
+			})()
 		}
 	  }
 	})
