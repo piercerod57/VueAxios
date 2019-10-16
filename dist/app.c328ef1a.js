@@ -12075,21 +12075,41 @@ window.onload = function () {
   var app = new _vue.default({
     el: '#app',
     data: {
-      get: '...',
-      post: '...',
-      del: '...'
+      get: {
+        status: '...',
+        title: '...',
+        body: '...',
+        id: '...',
+        userId: '...',
+        headers: '...'
+      },
+      post: {
+        status: '...',
+        data: '...',
+        headers: '...'
+      },
+      del: {
+        status: '...',
+        data: '...',
+        headers: '...'
+      }
     },
     methods: {
       VueGetFunction: function () {
-        let self = this;
+        let self = this.get;
         var number = Math.floor(Math.random() * 100);
         axios.get('https://jsonplaceholder.typicode.com/posts/' + number).then(function (data) {
           console.log(data);
-          self.get = JSON.stringify(data.data);
+          self.status = data.status;
+          self.title = data.data.title;
+          self.body = data.data.body;
+          self.id = data.data.id;
+          self.userId = data.data.userId;
+          self.headers = data.headers;
         });
       },
       VuePostFunction: function () {
-        let self = this;
+        let self = this.post;
         ;
 
         (async () => {
@@ -12099,7 +12119,9 @@ window.onload = function () {
             userId: 1
           }).then(function (response) {
             console.log(response);
-            self.post = response;
+            self.status = response.status;
+            self.data = response.data;
+            self.headers = response.headers;
           }).catch(function (error) {
             console.log(error);
             self.post = error;
@@ -12107,14 +12129,16 @@ window.onload = function () {
         })();
       },
       VueDelFunction: function () {
-        let self = this;
+        let self = this.del;
         var number = Math.floor(Math.random() * 100);
         ;
 
         (async () => {
           var response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + number).then(function (response) {
             console.log(response);
-            self.del = response;
+            self.status = response.status;
+            self.data = response.data;
+            self.headers = response.headers;
           }).catch(function (error) {
             console.log(error);
             self.del = error;

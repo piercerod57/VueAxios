@@ -19,7 +19,7 @@
 		margin: 10px 20px;
 	}
 	.card{
-		width: 80%;
+		width: 100%;
 		height: auto;
 		
 	}</style>
@@ -40,11 +40,14 @@
 					</td>
 					<td>
 						<div class="card">
-							{{ get }} 
+							<li v-for="(item, name) in get">
+								{{ name }}: {{ item }}
+							</li>
 						</div>
 					</td>
-				</div>	
-			</div></tr>
+				</div>
+			</div>	
+			</tr>
 			<br>
 			<tr>
 			<div>
@@ -54,7 +57,9 @@
 					</td>
 					<td>
 						<div class="card">
-							{{ post }} 
+							<li v-for="(item, name) in post">
+								{{ name }}: {{ item }}
+							</li>
 						</div>
 					</td>
 				</div>
@@ -69,7 +74,9 @@
 					</td>
 					<td>
 						<div class="card">
-							{{ del }} 
+							<li v-for="(item, name) in del">
+								{{ name }}: {{ item }}
+							</li>
 						</div>
 					</td>
 				</div>
