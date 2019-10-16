@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Axios</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>body {
+      background-color: #673AB7;
+    }
+	h1{
+		color: white;
+	}
+	.btn {
+		padding: 10px;
+		margin: 10px 20px;
+	}
+	.card{
+		width: 80%;
+		height: auto;
+		
+	}</style>
+</head>
+<body>
+<script src="/app.c328ef1a.js"></script>
+  <div>
+	<div class="navbar navbar-dark bg-dark">
+    <h1>Vue/Axios Demo</h1>
+	</div>
+	<div id="app"> 
+		<table class="table-responsive">
+			<tr>
+			<div>
+				<div>
+					<td>
+						<button v-on:click="VueGetFunction" class="btn btn-dark">Get Response</button>
+					</td>
+					<td>
+						<div class="card">
+							{{ get }} 
+						</div>
+					</td>
+				</div>	
+			</div></tr>
+			<br>
+			<tr>
+			<div>
+				<div>
+					<td>
+						<button v-on:click="VuePostFunction" class="btn btn-dark">Post Response</button>
+					</td>
+					<td>
+						<div class="card">
+							{{ post }} 
+						</div>
+					</td>
+				</div>
+			</div>	
+			</tr>
+			<br>
+			<tr>
+			<div>
+				<div>
+					<td>
+						<button v-on:click="VueDelFunction" class="btn btn-dark">Delete Response</button>
+					</td>
+					<td>
+						<div class="card">
+							{{ del }} 
+						</div>
+					</td>
+				</div>
+			</div>
+			<br>
+			</tr>
+		</table>
+	</div>
+  </div>
+</body>
+</html>
