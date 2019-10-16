@@ -12089,8 +12089,7 @@ window.onload = function () {
         });
       },
       VuePostFunction: function () {
-        let self = this; //var res = AxiosPostFunc();
-
+        let self = this;
         ;
 
         (async () => {
@@ -12106,15 +12105,6 @@ window.onload = function () {
             self.post = error;
           });
         })();
-        /*console.log(res);
-        console.log(`Status code: ${res.status}`);
-        console.log(`Status text: ${res.statusText}`);
-        console.log(`Request method: ${res.request.method}`);
-        console.log(`Path: ${res.request.path}`);
-        console.log(`Date: ${res.headers.date}`);
-        console.log(`Data: ${res.data}`);*/
-        //self.post = res.status;
-
       },
       VueDelFunction: function () {
         console.log('del');
@@ -12122,20 +12112,6 @@ window.onload = function () {
     }
   });
 };
-
-async function AxiosPostFunc() {
-  let res = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-    title: 'boysenberries',
-    body: 'bran',
-    userId: 1
-  }).then(function (response) {
-    console.log(response);
-    return response;
-  }).catch(function (error) {
-    console.log(error);
-    return error;
-  });
-}
 },{"vue":"node_modules/vue/dist/vue.common.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
