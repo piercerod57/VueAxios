@@ -12092,6 +12092,11 @@ window.onload = function () {
         status: '...',
         data: '...',
         headers: '...'
+      },
+      update: {
+        status: '...',
+        data: '...',
+        headers: '...'
       }
     },
     methods: {
@@ -12135,6 +12140,25 @@ window.onload = function () {
 
         (async () => {
           var response = await axios.delete('https://jsonplaceholder.typicode.com/posts/' + number).then(function (response) {
+            console.log(response);
+            self.status = response.status;
+            self.data = response.data;
+            self.headers = response.headers;
+          }).catch(function (error) {
+            console.log(error);
+            self.del = error;
+          });
+        })();
+      },
+      VueUpdateFunction: function () {
+        let self = this.update;
+        var number = Math.floor(Math.random() * 100);
+        ;
+
+        (async () => {
+          var response = await axios.put('https://jsonplaceholder.typicode.com/posts/' + number, {
+            title: 'bran'
+          }).then(function (response) {
             console.log(response);
             self.status = response.status;
             self.data = response.data;

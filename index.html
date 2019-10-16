@@ -85,6 +85,23 @@
 			</div>
 			<br/>
 			</tr>
+			<tr>
+			<div>
+				<div>
+					<td>
+						<button v-on:click='VueUpdateFunction'  class='btn btn-dark'>Update Response</button>
+					</td>
+					<td>
+						<div class='card' >
+							<li v-for="(item, name) in update">
+								{{ name }}: {{ item }}
+							</li>
+						</div>
+					</td>
+				</div>
+			</div>
+			<br/>
+			</tr>
 		</table>
 	</div>
   </div>
